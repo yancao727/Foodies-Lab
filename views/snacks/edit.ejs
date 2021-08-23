@@ -1,0 +1,67 @@
+<% layout('/layout/boilerplate') %>
+<!-- <h1>Edit Snack</h1>
+<form action="/snacks/<%= snack._id %>?_method=PUT" method="POST">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id = "title" name ="snack[title]" value="<%= snack.title%>" > 
+    </div>
+    <div>
+        <label for="location">Location</label>
+        <input type="text" id = "location" name ="snack[location]" value="<%= snack.location%>"> 
+    </div>
+    <button>Update Snack</button>
+</form>
+<a href="/snacks/<%= snack._id %>">Back to snack you shared</a> -->
+
+
+<div class="row">
+    <h1 class="text-center">Edit Snack</h1>
+    <div class="col-6 offset-3">
+        <form action="/snacks/<%= snack._id %>?_method=PUT" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class = "form-label" for="title">Title</label>
+                <input class= "form-control" type="text" id = "title" name ="snack[title]" value="<%= snack.title%>" required> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+            </div>
+            <div class="mb-3">
+                <label class = "form-label" for="location">Location</label>
+                <input class= "form-control" type="text" id = "location" name ="snack[location]" value="<%= snack.location%>" required> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+            </div>
+            <div class="mb-3">
+                <label class = "form-label" for="image">Image URL</label>
+                <input class= "form-control" type="text" id = "location" name ="snack[image]" value="<%= snack.image%>" required> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Snack Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="snack[price]" value="<%= snack.price%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div> 
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class = "form-label" for="description">Description</label>
+                <textarea class= "form-control" type="text" id = "description" name ="snack[description]" required><%= snack.description%></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-info">Update Snack</button>
+            </div>  
+        </form>
+        <a href="/snacks/<%= snack._id %>">Back to snack you shared</a>
+    </div>
+</div>

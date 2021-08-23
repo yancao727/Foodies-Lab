@@ -1,0 +1,25 @@
+<% layout('/layout/boilerplate') %>
+<h1>All Snacks Shared </h1>
+<div>
+    <a href="/snacks/new">Add Snack</a>
+</div>
+<% for (let snack of snacks){%>
+    <div class = "card" mb-3>  
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" alt="" src="<%= snack.image %>">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= snack.title %></h5>
+                    <p class="card-text"><%= snack.description %></p>
+                    <p class="card-text">
+                        <small class="text-muted"><%= snack.location %></small>
+                    </p>
+                    <a class="btn btn-primary" href="/snacks/<%= snack._id %>">View <%= snack.title %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }%>
+
